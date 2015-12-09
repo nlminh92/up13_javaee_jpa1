@@ -40,6 +40,10 @@ public class Marin {
             fetch = FetchType.EAGER)
     private Bateau bateau;
 
+    public long getId() {
+        return id;
+    }
+
     public Date getDateDeNaissance() {
         return dateDeNaissance;
     }

@@ -58,12 +58,12 @@ public class MainMarin {
         em.getTransaction().commit();
 
         // Retrieve
-        Marin marin = em.find(Marin.class, 1L);
+        Marin marin = em.find(Marin.class, marin1.getId());
         System.out.println("Chercher un marin: " + marin);
 
         // Update
         em.getTransaction().begin();
-        marin = em.find(Marin.class, 3L);
+        marin = em.find(Marin.class, marin3.getId());
         marin.setNom("Popeye");
         marin.setPrenom("David");
         em.getTransaction().commit();

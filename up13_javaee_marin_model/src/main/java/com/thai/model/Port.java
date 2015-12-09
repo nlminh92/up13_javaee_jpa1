@@ -7,8 +7,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,10 +20,9 @@ public class Port {
     @Column(name = "nom", length = 40)
     private String nom;
 
-    @JoinColumn(name = "pays")
-    @OneToOne(
-            cascade = CascadeType.PERSIST,
-            fetch = FetchType.EAGER)
+    @ManyToOne(
+            cascade=CascadeType.PERSIST,
+            fetch=FetchType.EAGER)
     private Pays pays;
 
     public Port() {
