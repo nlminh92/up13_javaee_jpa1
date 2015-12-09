@@ -1,7 +1,7 @@
 package com.thai.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
+import java.util.TreeSet;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -28,7 +28,11 @@ public class Bateau {
             cascade=CascadeType.PERSIST,
             fetch=FetchType.EAGER)
     @OrderBy("nom ASC")
-    private List<Marin> equipage = new ArrayList<Marin>();
+    private Collection<Marin> equipage = new TreeSet<Marin>(new NameComparator());
+
+    public long getId() {
+        return id;
+    }
 
     public String getNom() {
         return nom;
@@ -38,11 +42,12 @@ public class Bateau {
         this.nom = nom;
     }
 
-    public List<Marin> getEquipage() {
+    public Collection<Marin> getEquipage() {
         return equipage;
     }
 
     public void setMarin(Marin marin) {
         equipage.add(marin);
     }
+
 }
