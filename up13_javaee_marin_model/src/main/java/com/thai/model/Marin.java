@@ -9,7 +9,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -34,7 +33,6 @@ public class Marin {
     @Column(name = "date_de_naissance", length = 16)
     private Date dateDeNaissance;
 
-    @JoinColumn(name = "bateau")
     @ManyToOne(
             cascade = CascadeType.PERSIST,
             fetch = FetchType.EAGER)

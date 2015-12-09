@@ -8,7 +8,16 @@ import javax.persistence.Persistence;
 
 import com.thai.model.Marin;
 
+/**
+ * Exercice 1 - Question 3, 4
+ * @author HO Phu Thai
+ *
+ */
 public class MainMarin {
+
+    public static void printEndLn() {
+        System.out.println("FINIR à mettre le donnes à jour.");
+    }
 
     public static void main(String[] args) {
 
@@ -74,6 +83,8 @@ public class MainMarin {
         em.remove(marin);
         em.getTransaction().commit();
         System.out.println("Omitter un marin: " + marin);
+
+        MainMarin.printEndLn();
 
     }
 }

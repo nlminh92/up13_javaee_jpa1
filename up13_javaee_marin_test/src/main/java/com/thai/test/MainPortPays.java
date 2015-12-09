@@ -9,6 +9,11 @@ import javax.persistence.Persistence;
 import com.thai.model.Pays;
 import com.thai.model.Port;
 
+/**
+ * Exercice 2 - Question 1, 2, 3
+ * @author HO Phu Thai
+ *
+ */
 public class MainPortPays {
 
     public static void main(String[] args) {
@@ -76,7 +81,7 @@ public class MainPortPays {
 
         em.getTransaction().commit();
 
-
+        MainMarin.printEndLn();
     }
 
 }
